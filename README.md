@@ -28,7 +28,7 @@ docker build -t cakephp4_20.04-image -f Dockerfile.dev .
 ## Create instance of the container
 
 ```
-docker run -p 8080:80 -dit --name conainer_name-web --mount type=bind,source="$(pwd)",target=/var/www/html cakephp4_20.04-image
+docker run -p 8080:80 -dit --name conainer_name-web --env MAILHOG_SMTP_IP_ADDR=172.17.0.3 --mount type=bind,source="$(pwd)",target=/var/www/html cakephp4_20.04-image
 ```
 
 
